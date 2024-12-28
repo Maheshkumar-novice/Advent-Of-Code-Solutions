@@ -1,8 +1,5 @@
 # 🎄 Advent of Code Solutions 🎄
 
-[![Update README](https://github.com/Advent-Of-Code-Solutions/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Advent-Of-Code-Solutions/actions/workflows/update-readme.yml)
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2024---12---28-brightgreen)](https://github.com/Advent-Of-Code-Solutions)
-
 This repository contains my solutions for [Advent of Code](https://adventofcode.com/) challenges across multiple years.
 
 > [!TIP]
