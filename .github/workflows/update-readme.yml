@@ -1,0 +1,49 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main  # or master, depending on your default branch
+    paths:
+      - '*/Day-*/**'    # Trigger on changes to any day's solutions
+      - '.github/workflows/update-readme.yml'  # Trigger on workflow file changes
+      - 'generate_readme.py'    # Trigger on script changes
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for better tracking
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Generate README
+        run: python3 generate_readme.py --root .
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "No changes to README.md"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "README.md has been modified"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git commit -m "docs: update README with latest progress [skip ci]"
+          git push
