@@ -125,10 +125,7 @@ class AoCStats:
     def create_main_header(self) -> str:
         """Create the main header section with badges"""
         stars_repo_name = self.root_dir.resolve().name
-        return f"""# 🎄 Advent of Code Solutions 🎄
-
-[![Update README](https://github.com/{stars_repo_name}/actions/workflows/update-readme.yml/badge.svg)](https://github.com/{stars_repo_name}/actions/workflows/update-readme.yml)
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-{datetime.now().strftime('%Y---%m---%d')}-brightgreen)](https://github.com/{stars_repo_name})
+        return """# 🎄 Advent of Code Solutions 🎄
 
 This repository contains my solutions for [Advent of Code](https://adventofcode.com/) challenges across multiple years.
 
