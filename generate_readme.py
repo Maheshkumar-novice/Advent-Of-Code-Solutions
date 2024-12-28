@@ -49,8 +49,8 @@ class AoCStats:
         return DayStatus(
             year=year,
             day=int(day_dir.name.split('-')[1]),
-            has_part1=(day_dir / "part-1.py").exists(),
-            has_part2=(day_dir / "part-2.py").exists(),
+            has_part1=(day_dir / "part-1.py").exists() or (day_dir / "part-1.rb").exists(),
+            has_part2=(day_dir / "part-2.py").exists() or (day_dir / "part-2.rb").exists(),
         )
 
     def create_year_status_table(self, days: List[DayStatus]) -> str:
