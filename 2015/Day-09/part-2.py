@@ -11,17 +11,11 @@ with open("input.txt") as f:
         distinct_locations.add(src)
         distinct_locations.add(dest)
 
-    print(distance_between_locations)
-    print(distinct_locations)
-
     current_result = -1
     for perm in permutations(list(distinct_locations), len(distinct_locations)):
         covered_distance = 0
-        print(" -> ".join(perm))
         for src, dest in pairwise(perm):
-            print(" -> ", src, dest)
             covered_distance += distance_between_locations.get((src, dest))
-        print(" -> ", covered_distance)
         current_result = max(current_result, covered_distance)
 
     print("Max distance: ", current_result)
