@@ -1,0 +1,206 @@
+ITERATIVE VERSION BYTECODE:
+  4           RESUME                   0
+
+  5           LOAD_CONST               1 ('1321131112')
+              STORE_FAST               0 (input_data)
+
+  6           LOAD_GLOBAL              1 (range + NULL)
+              LOAD_CONST               2 (40)
+              CALL                     1
+              GET_ITER
+      L1:     FOR_ITER                98 (to L6)
+              STORE_FAST               1 (_)
+
+  7           LOAD_CONST               3 ('')
+              STORE_FAST               2 (new_input_data)
+
+  8           LOAD_CONST               4 (1)
+              STORE_FAST               3 (char_count)
+
+  9           LOAD_FAST                0 (input_data)
+              LOAD_CONST               5 (0)
+              BINARY_SUBSCR
+              STORE_FAST               4 (prev_char)
+
+ 10           LOAD_CONST               4 (1)
+              STORE_FAST               5 (i)
+
+ 11           LOAD_GLOBAL              3 (len + NULL)
+              LOAD_FAST                0 (input_data)
+              CALL                     1
+              STORE_FAST               6 (len_)
+
+ 12           LOAD_FAST_LOAD_FAST     86 (i, len_)
+              COMPARE_OP              18 (bool(<))
+              POP_JUMP_IF_FALSE       49 (to L5)
+
+ 13   L2:     LOAD_FAST_LOAD_FAST      5 (input_data, i)
+              BINARY_SUBSCR
+              LOAD_FAST                4 (prev_char)
+              COMPARE_OP              88 (bool(==))
+              POP_JUMP_IF_FALSE        6 (to L3)
+
+ 14           LOAD_FAST                3 (char_count)
+              LOAD_CONST               4 (1)
+              BINARY_OP               13 (+=)
+              STORE_FAST               3 (char_count)
+              JUMP_FORWARD            19 (to L4)
+
+ 16   L3:     LOAD_FAST                2 (new_input_data)
+              LOAD_GLOBAL              5 (str + NULL)
+              LOAD_FAST                3 (char_count)
+              CALL                     1
+              LOAD_FAST                4 (prev_char)
+              BINARY_OP                0 (+)
+              BINARY_OP               13 (+=)
+              STORE_FAST               2 (new_input_data)
+
+ 17           LOAD_CONST               4 (1)
+              STORE_FAST               3 (char_count)
+
+ 18   L4:     LOAD_FAST_LOAD_FAST      5 (input_data, i)
+              BINARY_SUBSCR
+              STORE_FAST               4 (prev_char)
+
+ 19           LOAD_FAST                5 (i)
+              LOAD_CONST               4 (1)
+              BINARY_OP               13 (+=)
+              STORE_FAST               5 (i)
+
+ 12           LOAD_FAST_LOAD_FAST     86 (i, len_)
+              COMPARE_OP              18 (bool(<))
+              POP_JUMP_IF_FALSE        2 (to L5)
+              JUMP_BACKWARD           49 (to L2)
+
+ 20   L5:     LOAD_FAST                2 (new_input_data)
+              LOAD_GLOBAL              5 (str + NULL)
+              LOAD_FAST                3 (char_count)
+              CALL                     1
+              LOAD_FAST                4 (prev_char)
+              BINARY_OP                0 (+)
+              BINARY_OP               13 (+=)
+              STORE_FAST               2 (new_input_data)
+
+ 21           LOAD_FAST                2 (new_input_data)
+              STORE_FAST               0 (input_data)
+              JUMP_BACKWARD          100 (to L1)
+
+  6   L6:     END_FOR
+              POP_TOP
+
+ 22           LOAD_GLOBAL              3 (len + NULL)
+              LOAD_FAST                0 (input_data)
+              CALL                     1
+              RETURN_VALUE
+
+RECURSIVE VERSION BYTECODE:
+  --           MAKE_CELL                0 (look_and_say)
+
+  25           RESUME                   0
+
+  26           LOAD_FAST                0 (look_and_say)
+               BUILD_TUPLE              1
+               LOAD_CONST               1 (<code object look_and_say at 0x7311ec7adce0, file "/home/elliot/Projects/Learning/Advent-Of-Code-Solutions/2015/Day-10/analyze.py", line 26>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_DEREF              0 (look_and_say)
+
+  45           LOAD_GLOBAL              1 (len + NULL)
+               LOAD_DEREF               0 (look_and_say)
+               PUSH_NULL
+               LOAD_CONST               2 ('1321131112')
+               LOAD_CONST               3 (1)
+               CALL                     2
+               CALL                     1
+               RETURN_VALUE
+
+Disassembly of <code object look_and_say at 0x7311ec7adce0, file "/home/elliot/Projects/Learning/Advent-Of-Code-Solutions/2015/Day-10/analyze.py", line 26>:
+  --           COPY_FREE_VARS           1
+
+  26           RESUME                   0
+
+  27           LOAD_CONST               1 ('')
+               STORE_FAST               2 (new_input_data)
+
+  28           LOAD_CONST               2 (1)
+               STORE_FAST               3 (char_count)
+
+  29           LOAD_FAST                0 (input_data)
+               LOAD_CONST               3 (0)
+               BINARY_SUBSCR
+               STORE_FAST               4 (prev_char)
+
+  30           LOAD_CONST               2 (1)
+               STORE_FAST               5 (i)
+
+  31           LOAD_GLOBAL              1 (len + NULL)
+               LOAD_FAST                0 (input_data)
+               CALL                     1
+               STORE_FAST               6 (len_)
+
+  32           LOAD_FAST_LOAD_FAST     86 (i, len_)
+               COMPARE_OP              18 (bool(<))
+               POP_JUMP_IF_FALSE       49 (to L4)
+
+  33   L1:     LOAD_FAST_LOAD_FAST      5 (input_data, i)
+               BINARY_SUBSCR
+               LOAD_FAST                4 (prev_char)
+               COMPARE_OP              88 (bool(==))
+               POP_JUMP_IF_FALSE        6 (to L2)
+
+  34           LOAD_FAST                3 (char_count)
+               LOAD_CONST               2 (1)
+               BINARY_OP               13 (+=)
+               STORE_FAST               3 (char_count)
+               JUMP_FORWARD            19 (to L3)
+
+  36   L2:     LOAD_FAST                2 (new_input_data)
+               LOAD_GLOBAL              3 (str + NULL)
+               LOAD_FAST                3 (char_count)
+               CALL                     1
+               LOAD_FAST                4 (prev_char)
+               BINARY_OP                0 (+)
+               BINARY_OP               13 (+=)
+               STORE_FAST               2 (new_input_data)
+
+  37           LOAD_CONST               2 (1)
+               STORE_FAST               3 (char_count)
+
+  38   L3:     LOAD_FAST_LOAD_FAST      5 (input_data, i)
+               BINARY_SUBSCR
+               STORE_FAST               4 (prev_char)
+
+  39           LOAD_FAST                5 (i)
+               LOAD_CONST               2 (1)
+               BINARY_OP               13 (+=)
+               STORE_FAST               5 (i)
+
+  32           LOAD_FAST_LOAD_FAST     86 (i, len_)
+               COMPARE_OP              18 (bool(<))
+               POP_JUMP_IF_FALSE        2 (to L4)
+               JUMP_BACKWARD           49 (to L1)
+
+  40   L4:     LOAD_FAST                2 (new_input_data)
+               LOAD_GLOBAL              3 (str + NULL)
+               LOAD_FAST                3 (char_count)
+               CALL                     1
+               LOAD_FAST                4 (prev_char)
+               BINARY_OP                0 (+)
+               BINARY_OP               13 (+=)
+               STORE_FAST               2 (new_input_data)
+
+  41           LOAD_FAST                1 (times)
+               LOAD_CONST               4 (40)
+               COMPARE_OP             119 (bool(!=))
+               POP_JUMP_IF_FALSE       11 (to L5)
+
+  42           LOAD_DEREF               7 (look_and_say)
+               PUSH_NULL
+               LOAD_FAST_LOAD_FAST     33 (new_input_data, times)
+               LOAD_CONST               2 (1)
+               BINARY_OP                0 (+)
+               CALL                     2
+               RETURN_VALUE
+
+  43   L5:     LOAD_FAST                2 (new_input_data)
+               RETURN_VALUE

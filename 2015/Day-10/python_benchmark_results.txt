@@ -1,0 +1,728 @@
+Python Version Benchmarking Results
+===================================
+Wed May 21 10:49:02 PM IST 2025
+
+===============================================
+BENCHMARKING loop.py
+===============================================
+
+Testing Python 3.7 with loop.py...
+Run 1 output:
+492982
+         45 function calls in 0.777 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.777    0.777    0.777    0.777 loop.py:1(<module>)
+        1    0.000    0.000    0.777    0.777 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         45 function calls in 0.765 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.765    0.765    0.765    0.765 loop.py:1(<module>)
+        1    0.000    0.000    0.765    0.765 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         45 function calls in 0.775 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.774    0.774    0.775    0.775 loop.py:1(<module>)
+        1    0.000    0.000    0.775    0.775 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.7 with loop.py: .7723 seconds
+
+Testing Python 3.8 with loop.py...
+Run 1 output:
+492982
+         45 function calls in 0.584 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.584    0.584    0.584    0.584 loop.py:1(<module>)
+        1    0.000    0.000    0.584    0.584 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         45 function calls in 0.588 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.588    0.588    0.588    0.588 loop.py:1(<module>)
+        1    0.000    0.000    0.588    0.588 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         45 function calls in 0.574 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.574    0.574    0.574    0.574 loop.py:1(<module>)
+        1    0.000    0.000    0.574    0.574 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.8 with loop.py: .5820 seconds
+
+Testing Python 3.9 with loop.py...
+Run 1 output:
+492982
+         45 function calls in 0.570 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.570    0.570    0.570    0.570 loop.py:1(<module>)
+        1    0.000    0.000    0.570    0.570 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         45 function calls in 0.570 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.569    0.569    0.570    0.570 loop.py:1(<module>)
+        1    0.000    0.000    0.570    0.570 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         45 function calls in 0.568 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.568    0.568    0.568    0.568 loop.py:1(<module>)
+        1    0.000    0.000    0.568    0.568 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.9 with loop.py: .5693 seconds
+
+Testing Python 3.10 with loop.py...
+Run 1 output:
+492982
+         45 function calls in 0.684 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.684    0.684    0.684    0.684 loop.py:1(<module>)
+        1    0.000    0.000    0.684    0.684 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         45 function calls in 0.682 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.682    0.682    0.682    0.682 loop.py:1(<module>)
+        1    0.000    0.000    0.682    0.682 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         45 function calls in 0.688 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.688    0.688    0.688    0.688 loop.py:1(<module>)
+        1    0.000    0.000    0.688    0.688 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.10 with loop.py: .6846 seconds
+
+Testing Python 3.11 with loop.py...
+Run 1 output:
+492982
+         45 function calls in 7.554 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    7.554    7.554 {built-in method builtins.exec}
+        1    7.554    7.554    7.554    7.554 loop.py:1(<module>)
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         45 function calls in 7.692 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    7.692    7.692 {built-in method builtins.exec}
+        1    7.692    7.692    7.692    7.692 loop.py:1(<module>)
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         45 function calls in 7.842 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    7.842    7.842 {built-in method builtins.exec}
+        1    7.842    7.842    7.842    7.842 loop.py:1(<module>)
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.11 with loop.py: 7.6960 seconds
+
+Testing Python 3.12 with loop.py...
+Run 1 output:
+492982
+         45 function calls in 9.967 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    9.967    9.967 {built-in method builtins.exec}
+        1    9.967    9.967    9.967    9.967 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 2 output:
+492982
+         45 function calls in 9.809 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    9.809    9.809 {built-in method builtins.exec}
+        1    9.809    9.809    9.809    9.809 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+
+Run 3 output:
+492982
+         45 function calls in 10.006 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   10.006   10.006 {built-in method builtins.exec}
+        1   10.006   10.006   10.006   10.006 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Average time for Python 3.12 with loop.py: 9.9273 seconds
+
+Testing Python 3.13 with loop.py...
+Run 1 output:
+492982
+         45 function calls in 6.576 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    6.576    6.576 {built-in method builtins.exec}
+        1    6.576    6.576    6.576    6.576 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 2 output:
+492982
+         45 function calls in 6.558 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    6.558    6.558 {built-in method builtins.exec}
+        1    6.558    6.558    6.558    6.558 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 3 output:
+492982
+         45 function calls in 6.508 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    6.508    6.508 {built-in method builtins.exec}
+        1    6.508    6.508    6.508    6.508 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Average time for Python 3.13 with loop.py: 6.5473 seconds
+
+Testing Python 3.14 with loop.py...
+Run 1 output:
+492982
+         45 function calls in 6.650 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    6.650    6.650 {built-in method builtins.exec}
+        1    6.650    6.650    6.650    6.650 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 2 output:
+492982
+         45 function calls in 6.747 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    6.747    6.747 {built-in method builtins.exec}
+        1    6.747    6.747    6.747    6.747 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 3 output:
+492982
+         45 function calls in 6.546 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    6.546    6.546 {built-in method builtins.exec}
+        1    6.546    6.546    6.546    6.546 loop.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Average time for Python 3.14 with loop.py: 6.6476 seconds
+
+
+===============================================
+BENCHMARKING func.py
+===============================================
+
+Testing Python 3.7 with func.py...
+Run 1 output:
+492982
+         85 function calls (46 primitive calls) in 0.471 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.471    0.471 func.py:1(<module>)
+     40/1    0.471    0.012    0.471    0.471 func.py:1(look_and_say)
+        1    0.000    0.000    0.471    0.471 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         85 function calls (46 primitive calls) in 0.476 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.476    0.476 func.py:1(<module>)
+     40/1    0.476    0.012    0.476    0.476 func.py:1(look_and_say)
+        1    0.000    0.000    0.476    0.476 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         85 function calls (46 primitive calls) in 0.516 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.516    0.516 func.py:1(<module>)
+     40/1    0.515    0.013    0.515    0.515 func.py:1(look_and_say)
+        1    0.000    0.000    0.516    0.516 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.7 with func.py: .4876 seconds
+
+Testing Python 3.8 with func.py...
+Run 1 output:
+492982
+         85 function calls (46 primitive calls) in 0.377 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.377    0.377 func.py:1(<module>)
+     40/1    0.377    0.009    0.377    0.377 func.py:1(look_and_say)
+        1    0.000    0.000    0.377    0.377 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         85 function calls (46 primitive calls) in 0.371 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.371    0.371 func.py:1(<module>)
+     40/1    0.371    0.009    0.371    0.371 func.py:1(look_and_say)
+        1    0.000    0.000    0.371    0.371 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         85 function calls (46 primitive calls) in 0.405 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.405    0.405 func.py:1(<module>)
+     40/1    0.405    0.010    0.405    0.405 func.py:1(look_and_say)
+        1    0.000    0.000    0.405    0.405 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.8 with func.py: .3843 seconds
+
+Testing Python 3.9 with func.py...
+Run 1 output:
+492982
+         85 function calls (46 primitive calls) in 0.407 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.407    0.407 func.py:1(<module>)
+     40/1    0.407    0.010    0.407    0.407 func.py:1(look_and_say)
+        1    0.000    0.000    0.407    0.407 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         85 function calls (46 primitive calls) in 0.419 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.419    0.419 func.py:1(<module>)
+     40/1    0.419    0.010    0.419    0.419 func.py:1(look_and_say)
+        1    0.000    0.000    0.419    0.419 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         85 function calls (46 primitive calls) in 0.393 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.393    0.393 func.py:1(<module>)
+     40/1    0.393    0.010    0.393    0.393 func.py:1(look_and_say)
+        1    0.000    0.000    0.393    0.393 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.9 with func.py: .4063 seconds
+
+Testing Python 3.10 with func.py...
+Run 1 output:
+492982
+         85 function calls (46 primitive calls) in 0.476 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.476    0.476 func.py:1(<module>)
+     40/1    0.476    0.012    0.476    0.476 func.py:1(look_and_say)
+        1    0.000    0.000    0.476    0.476 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         85 function calls (46 primitive calls) in 0.453 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.453    0.453 func.py:1(<module>)
+     40/1    0.453    0.011    0.453    0.453 func.py:1(look_and_say)
+        1    0.000    0.000    0.453    0.453 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         85 function calls (46 primitive calls) in 0.500 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.500    0.500 func.py:1(<module>)
+     40/1    0.500    0.012    0.500    0.500 func.py:1(look_and_say)
+        1    0.000    0.000    0.500    0.500 {built-in method builtins.exec}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.10 with func.py: .4763 seconds
+
+Testing Python 3.11 with func.py...
+Run 1 output:
+492982
+         85 function calls (46 primitive calls) in 9.804 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    9.804    9.804 {built-in method builtins.exec}
+        1    0.000    0.000    9.804    9.804 func.py:1(<module>)
+     40/1    9.804    0.245    9.804    9.804 func.py:1(look_and_say)
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 2 output:
+492982
+         85 function calls (46 primitive calls) in 9.890 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    9.890    9.890 {built-in method builtins.exec}
+        1    0.000    0.000    9.890    9.890 func.py:1(<module>)
+     40/1    9.890    0.247    9.890    9.890 func.py:1(look_and_say)
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Run 3 output:
+492982
+         85 function calls (46 primitive calls) in 10.045 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   10.045   10.045 {built-in method builtins.exec}
+        1    0.000    0.000   10.045   10.045 func.py:1(<module>)
+     40/1   10.045    0.251   10.045   10.045 func.py:1(look_and_say)
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Average time for Python 3.11 with func.py: 9.9130 seconds
+
+Testing Python 3.12 with func.py...
+Run 1 output:
+492982
+         85 function calls (46 primitive calls) in 0.370 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.370    0.370 {built-in method builtins.exec}
+        1    0.000    0.000    0.370    0.370 func.py:1(<module>)
+     40/1    0.370    0.009    0.370    0.370 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 2 output:
+492982
+         85 function calls (46 primitive calls) in 0.448 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.448    0.448 {built-in method builtins.exec}
+        1    0.000    0.000    0.448    0.448 func.py:1(<module>)
+     40/1    0.448    0.011    0.448    0.448 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 3 output:
+492982
+         85 function calls (46 primitive calls) in 0.382 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.382    0.382 {built-in method builtins.exec}
+        1    0.000    0.000    0.382    0.382 func.py:1(<module>)
+     40/1    0.382    0.010    0.382    0.382 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Average time for Python 3.12 with func.py: .4000 seconds
+
+Testing Python 3.13 with func.py...
+Run 1 output:
+492982
+         85 function calls (46 primitive calls) in 0.330 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.330    0.330 {built-in method builtins.exec}
+        1    0.000    0.000    0.330    0.330 func.py:1(<module>)
+     40/1    0.330    0.008    0.330    0.330 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+
+Run 2 output:
+492982
+         85 function calls (46 primitive calls) in 0.353 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.353    0.353 {built-in method builtins.exec}
+        1    0.000    0.000    0.353    0.353 func.py:1(<module>)
+     40/1    0.353    0.009    0.353    0.353 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 3 output:
+492982
+         85 function calls (46 primitive calls) in 0.375 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.375    0.375 {built-in method builtins.exec}
+        1    0.000    0.000    0.375    0.375 func.py:1(<module>)
+     40/1    0.375    0.009    0.375    0.375 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Average time for Python 3.13 with func.py: .3526 seconds
+
+Testing Python 3.14 with func.py...
+Run 1 output:
+492982
+         85 function calls (46 primitive calls) in 0.326 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.326    0.326 {built-in method builtins.exec}
+        1    0.000    0.000    0.326    0.326 func.py:1(<module>)
+     40/1    0.326    0.008    0.326    0.326 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 2 output:
+492982
+         85 function calls (46 primitive calls) in 0.345 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.345    0.345 {built-in method builtins.exec}
+        1    0.000    0.000    0.345    0.345 func.py:1(<module>)
+     40/1    0.345    0.009    0.345    0.345 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Run 3 output:
+492982
+         85 function calls (46 primitive calls) in 0.326 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.326    0.326 {built-in method builtins.exec}
+        1    0.000    0.000    0.326    0.326 func.py:1(<module>)
+     40/1    0.326    0.008    0.326    0.326 func.py:1(look_and_say)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+
+Average time for Python 3.14 with func.py: .3323 seconds
+
+
+========================================
+SUMMARY OF RESULTS (Average Execution Times)
+========================================
+
+Python Version | loop.py Time (sec) | func.py Time (sec) | Difference (sec) | % Improvement
+-------------- | ----------------- | ----------------- | ---------------- | -------------
+Python 3.7     | .7723             | .4876             | .2847            | +36.00%
+Python 3.8     | .5820             | .3843             | .1977            | +33.00%
+Python 3.9     | .5693             | .4063             | .1630            | +28.00%
+Python 3.10    | .6846             | .4763             | .2083            | +30.00%
+Python 3.11    | 7.6960            | 9.9130            | -2.2170          | -28.00%
+Python 3.12    | 9.9273            | .4000             | 9.5273           | +95.00%
+Python 3.13    | 6.5473            | .3526             | 6.1947           | +94.00%
+Python 3.14    | 6.6476            | .3323             | 6.3153           | +95.00%
+
+FASTEST VERSIONS:
+Fastest for loop.py: Python 3.9 with average time .5693 seconds
+Fastest for func.py: Python 3.14 with average time .3323 seconds
