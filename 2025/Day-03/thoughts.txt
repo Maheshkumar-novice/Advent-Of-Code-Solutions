@@ -1,0 +1,58 @@
+we have a batteries ordered in a battery pack rows.
+on each row we can turn on only 2 batteries. order matters.
+by concating the turned on batteries joltage we can find the total joltage of the pack.
+we can't switch the order.
+
+818181911112111
+
+if we have something like this, then my thought,
+
+first find the id of the maximum value. in the example case it is 9.
+
+and the next value should be from the remaining elements. so for the remaining elements we do the same process.
+find the max element.
+
+if the first max element is at the end, then find the largest from the first till max index element.
+
+reverse the result.
+
+if the max is at first then no problem.
+
+have a util for finding max element and their index from a list.
+
+send the whole list.
+if the max is at the end
+    then send the first till max index list and find max.
+    reverse the result and use it
+
+else
+    send the max till end list and find max concat and use.
+
+
+
+818181911112111
+
+2 3 4 2 3 4 2 3 4 2 3 4 2 7 8
+
+8 - 14
+7 - 13
+4 - 2, 5, 8, 11
+3 - 1, 4, 7, 10
+
+2 - 4
+5 - 4
+8 - 4
+11 - 4
+
+1 - 3
+4 - 3
+7 - 3
+10 - 3
+
+14 - 8
+13 - 7
+
+while 12 counts met
+    get max value
+        fill it from left with 0
+try this first.
