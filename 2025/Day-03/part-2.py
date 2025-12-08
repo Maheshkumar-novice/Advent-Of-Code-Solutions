@@ -8,19 +8,22 @@ def find_max_and_its_index_from_list(data):
     return max_value, max_index
 
 
-with open("sample.txt") as f:
+with open("input.txt") as f:
     sum_ = 0
-    for line in ["234234234234278"]:
+    for line in f:
         data = list(map(int, list(line.strip())))
-        replaced_count = 0
-        while replaced_count != 12:
-            max_value, max_index = find_max_and_its_index_from_list(data)
-            big_index = len(data) - 1
-            while big_index >= 0:
-                if data[big_index] == max_value:
-                    data[big_index] = 0
-                    replaced_count += 1
-                    if replaced_count == 12:
-                        break
-                big_index -= 1
-        print(data)
+        result = []
+        required_length = 12
+        data_size = len(data)
+        iteration_count = data_size - required_length
+        while True:
+            max_value, max_index = find_max_and_its_index_from_list(data[: iteration_count + 1])
+            data = data[max_index + 1 :]
+            required_length -= 1
+            result.append(max_value)
+            data_size = len(data)
+            iteration_count = data_size - required_length
+            if required_length == 0:
+                sum_ += int("".join(map(str, result)))
+                break
+    print(sum_)
