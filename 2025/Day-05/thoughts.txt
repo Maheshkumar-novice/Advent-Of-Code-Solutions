@@ -1,0 +1,79 @@
+3-5
+10-14
+16-20
+12-18
+
+1
+5
+8
+11
+17
+32
+
+the bottom things after the blank line are the ingredient ids.
+
+we need to find out how much ingredients are in the given range before the blank line.
+
+3 <= id <= 5
+10 <= id <= 14
+16 <= id <= 20
+12 <= id <= 18
+
+for each id run this check...
+split each line and create ranges tuple list...
+then for each ingredient check the range check and print..
+
+part 2:
+3-5
+10-14
+16-20
+12-18
+
+3 4 5
+10 11 12 13 14
+16 17 18 19 20
+12 13 14 15 16 17 18
+
+3 4 5
+10 11 12 13 14 15 16 17 18 19 20
+
+overlapping ranges?
+
+brute force: add to set but it will be huge...let's see lol
+going above 3 GB ram lol
+4 GB...
+still running...
+while it runs let's think of a range overlapping algo...
+
+how will we merge ranges?
+
+if the start or end belong to other range we can merge...
+10 - 14 and 12 - 18 becomes 10 - 18
+sort by first value key..then 1 loop to see...
+
+1, 2 => then see if it is mergeable
+
+(3, 5) and (10, 14) => mergeable? second start in first? then No
+(10, 14) and (12, 18) => mergeable? yes
+(10, 18)
+(10, 18) and (16, 20) => mergeable? yes
+(10, 20)
+
+how do we extract? merged values?
+add it to a merged array and a merge flag
+if merge flag then continue the loop until merge flag stops...
+[(3, 5), (10, 18), (12, 20), (16, 20)]
+[(3, 5), (10, 20), (12, 20), (16, 20)]
+
+3, 5
+10, 14
+12, 18
+16, 20
+
+3, 5 3 count
+10, 14 5 count
+12 is counted under 14 so leave it change the range to 15, 18 so 4 count
+18 is counted so 19, 20 => 2 count total 14
+
+10, 14
+12, 13

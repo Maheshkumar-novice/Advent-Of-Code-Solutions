@@ -1,0 +1,56 @@
+..@@.@@@@.
+@@@.@.@.@@
+@@@@@.@.@@
+@.@@@@..@.
+@@.@@@@.@@
+.@@@@@@@.@
+.@.@.@.@@@
+@.@@@.@@@@
+.@@@@@@@@.
+@.@.@@@.@.
+
+Find @s which contains less than 4 neighbours.
+  0 1 2
+0 . . .
+1 . . .
+2 . . .
+
+(1, 1) - .
+Top - (0, 0), (0, 1), (0, 2)
+Bottom - (2, 0), (2, 1), (2, 2)
+Left - (1, 0)
+Right - (1, 2)
+
+Top algorithm:
+Row - 1
+Column - (-1, 0, 1)
+(-1, -1), (-1, 0), (-1, 1)
+
+Bottom:
+Row + 1
+Column - (-1, 0, 1)
+(1, -1), (1, 0), (1, 1)
+
+Left - (0, -1)
+Right - (0, +1)
+
+Neighbours:
+(-1, -1)
+(-1, 0)
+(-1, 1)
+
+(1, -1)
+(1, 0)
+(1, 1)
+
+(0, -1)
+(0, 1)
+
+Eight neighbours. Make sure we have less than 4. Find the count.
+
+Take the input. Make a grid. Print the grid.
+Iterate the grid. For each coordinate - find the number of neighbours
+Update the count
+Print the count
+
+Part 2 is same but it will be loop and we stop when we hit the result as 0.
