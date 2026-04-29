@@ -1,0 +1,61 @@
+Given our input and marked S as the start.
+Beam from the S move downwards until it reaches a splitter
+once reach the splitter the speam splits into 2
+Edge case: left or right might be outside of boundary or interfere with other Beam
+
+If I'm a dot and above me is a beam then i should transform to beam
+If I'm a splitter and above me is a beam then I should split beam beside me left and right
+and increment split count
+
+so S can be | beam
+
+above will be? one row above and same column - should not be out of bounds
+splitter left col and right col should be out of bounds
+
+go through from second line
+
+if i am a dot then check neighbour above me before my row and in same position
+if they are a beam than mark me as beam
+if i am a splitter and my above neighbour is a beam then create 2 beams beside me and increase split count
+
+
+my data structure
+[[], [], []]
+
+so that we can index and update easily.
+
+part 1 done. wow, thinking and writing here helps a lot.
+
+part 2. many worlds? seriously?
+
+when we encounter a spit we should go either left or right and complete the path.
+
+we need to find out all the timelines in which the particle completes the path.
+
+exploring all paths? looks like a recursion?
+
+when we encounter a splitter we previously did left and right both split but this time we should take left path and see where the road takes
+and then choose right path and see where the road takes. whether we could be able to complete the path or not.
+
+how many times we can complete that is the answer? always it finishes right? we need to find all left right paths?
+
+when we encounter a splitter we need to send the beam to the left first and send the state to solver again. 
+
+until when? until we reach the last row then return. what does our solver do? it takes in the input goes through the row...not
+
+i have to get better understanding of this...
+
+create recursion with the input data copy when we encounter splitter? counter increment when we reach the dead end?
+
+last line will always be dots.
+
+start from 2
+
+apply as usual if it is dot
+
+else mutate left state - copy and recurse
+     mutate right state - copy and recurse
+
+    send the row id as well incr by 1
+
+if the row id is equal to len return. incr count.
