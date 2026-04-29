@@ -7,7 +7,7 @@
 #         global split_count
 #         if index == len(input_data):
 #             return
-    
+
 #         for i, line in enumerate(input_data_copy[index:], index):
 #             for j, pos in enumerate(line):
 #                 if pos == "." and input_data_copy[i - 1][j] == "|":
@@ -34,14 +34,18 @@ with open("input.txt") as f:
 
 from functools import cache
 
+
 @cache
 def solve(r, c):
-    if r == len(input_data): return 1
+    if r == len(input_data):
+        return 1
 
     if input_data[r][c] == "." or input_data[r][c] == "S":
         return solve(r + 1, c)
-    elif input_data[r][c] == "^":
+    if input_data[r][c] == "^":
         return solve(r, c - 1) + solve(r, c + 1)
+    return None
+
 
 print(solve(s_r, s_c), solve.cache_info())
 
