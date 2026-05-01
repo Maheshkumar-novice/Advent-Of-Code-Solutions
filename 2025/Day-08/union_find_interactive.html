@@ -1,0 +1,203 @@
+
+<style>
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+  .uf-btn { font-size:13px; padding:6px 14px; border-radius:var(--border-radius-md); border:0.5px solid var(--color-border-secondary); background:transparent; color:var(--color-text-primary); cursor:pointer; transition:background .15s; }
+  .uf-btn:hover { background:var(--color-background-secondary); }
+  .uf-btn:active { transform:scale(.97); }
+  .uf-btn.primary { background:var(--color-background-info); color:var(--color-text-info); border-color:var(--color-border-info); }
+  .log-line { font-size:12px; color:var(--color-text-secondary); padding:2px 0; font-family:var(--font-mono); }
+  .log-line.highlight { color:var(--color-text-success); }
+  .log-line.warn { color:var(--color-text-warning); }
+</style>
+
+<h2 class="sr-only">Interactive union-find (disjoint set) visualizer — click nodes to union them and watch path compression happen</h2>
+
+<div id="uf-root" style="padding:1rem 0">
+  <svg id="uf-svg" width="100%" viewBox="0 0 680 280" style="display:block"></svg>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 8px;align-items:center">
+    <span style="font-size:13px;color:var(--color-text-secondary);min-width:120px" id="uf-status">Click two nodes to union</span>
+    <button class="uf-btn" onclick="ufFind()">Find selected</button>
+    <button class="uf-btn" onclick="ufReset()">Reset</button>
+    <button class="uf-btn primary" onclick="ufDemo()">Run demo ↗</button>
+  </div>
+
+  <div id="uf-log" style="border-top:0.5px solid var(--color-border-tertiary);padding-top:8px;max-height:80px;overflow:hidden"></div>
+</div>
+
+<script>
+const N = 8;
+let parent, rank, selected, animating;
+
+function init() {
+  parent = Array.from({length:N},(_,i)=>i);
+  rank   = new Array(N).fill(0);
+  selected = [];
+  animating = false;
+  log('');
+  render();
+}
+
+function find(x) {
+  if(parent[x]!==x) parent[x]=find(parent[x]);
+  return parent[x];
+}
+
+function union(a,b) {
+  const ra=find(a), rb=find(b);
+  if(ra===rb) return false;
+  if(rank[ra]<rank[rb]) parent[ra]=rb;
+  else if(rank[ra]>rank[rb]) parent[rb]=ra;
+  else { parent[rb]=ra; rank[ra]++; }
+  return true;
+}
+
+function nodePos(i) {
+  const cx=340, cy=130, r=110;
+  const angle = (i/N)*2*Math.PI - Math.PI/2;
+  return [cx + r*Math.cos(angle), cy + r*Math.sin(angle)];
+}
+
+function componentColor(root) {
+  const colors = ['#7F77DD','#1D9E75','#D85A30','#D4537E','#378ADD','#BA7517','#639922','#888780'];
+  return colors[root % colors.length];
+}
+
+function render() {
+  const svg = document.getElementById('uf-svg');
+  svg.innerHTML='';
+
+  for(let i=0;i<N;i++) {
+    const p = find(i);
+    if(p!==i) {
+      const [x1,y1]=nodePos(i);
+      const [x2,y2]=nodePos(p);
+      const line=document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('x1',x1); line.setAttribute('y1',y1);
+      line.setAttribute('x2',x2); line.setAttribute('y2',y2);
+      line.setAttribute('stroke',componentColor(p));
+      line.setAttribute('stroke-width','2');
+      line.setAttribute('opacity','0.4');
+      svg.appendChild(line);
+    }
+  }
+
+  for(let i=0;i<N;i++) {
+    const [cx,cy]=nodePos(i);
+    const root=find(i);
+    const isRoot=root===i;
+    const isSel=selected.includes(i);
+    const color=componentColor(root);
+
+    const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.style.cursor='pointer';
+    g.addEventListener('click',()=>nodeClick(i));
+
+    const circle=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    circle.setAttribute('cx',cx); circle.setAttribute('cy',cy);
+    circle.setAttribute('r', isRoot ? 22 : 18);
+    circle.setAttribute('fill', isSel ? color : color+'33');
+    circle.setAttribute('stroke', color);
+    circle.setAttribute('stroke-width', isSel ? '2.5' : '1.5');
+    g.appendChild(circle);
+
+    const label=document.createElementNS('http://www.w3.org/2000/svg','text');
+    label.setAttribute('x',cx); label.setAttribute('y',cy);
+    label.setAttribute('text-anchor','middle');
+    label.setAttribute('dominant-baseline','central');
+    label.setAttribute('font-size','13');
+    label.setAttribute('font-weight','500');
+    label.setAttribute('fill', isSel ? '#fff' : color);
+    label.textContent=i;
+    g.appendChild(label);
+
+    if(isRoot) {
+      const crown=document.createElementNS('http://www.w3.org/2000/svg','text');
+      crown.setAttribute('x',cx); crown.setAttribute('y',cy-28);
+      crown.setAttribute('text-anchor','middle');
+      crown.setAttribute('font-size','10');
+      crown.setAttribute('fill',color);
+      crown.textContent='root';
+      svg.appendChild(crown);
+    }
+
+    const rankLabel=document.createElementNS('http://www.w3.org/2000/svg','text');
+    rankLabel.setAttribute('x',cx+20); rankLabel.setAttribute('y',cy-16);
+    rankLabel.setAttribute('font-size','10');
+    rankLabel.setAttribute('fill',color);
+    rankLabel.setAttribute('opacity','0.7');
+    rankLabel.textContent='r'+rank[i];
+    svg.appendChild(rankLabel);
+
+    svg.appendChild(g);
+  }
+
+  const components = new Set(Array.from({length:N},(_,i)=>find(i)));
+  document.getElementById('uf-status').textContent =
+    selected.length===0 ? `${components.size} component${components.size>1?'s':''} — click nodes to union` :
+    selected.length===1 ? `Node ${selected[0]} selected — click another` :
+    `Union(${selected[0]}, ${selected[1]})`;
+}
+
+function nodeClick(i) {
+  if(animating) return;
+  if(selected.includes(i)) { selected=[]; render(); return; }
+  selected.push(i);
+  if(selected.length===2) {
+    const [a,b]=selected;
+    const ra=find(a), rb=find(b);
+    if(ra===rb) {
+      log(`find(${a})=find(${b})=${ra} — already same component`, 'warn');
+    } else {
+      const merged=union(a,b);
+      const newRoot=find(a);
+      log(`union(${a},${b}) → root ${newRoot}, path compressed`, 'highlight');
+    }
+    selected=[];
+    render();
+  } else {
+    render();
+  }
+}
+
+function ufFind() {
+  if(selected.length===0) { log('select a node first', 'warn'); return; }
+  const i=selected[0];
+  const r=find(i);
+  log(`find(${i}) = ${r}`, 'highlight');
+  render();
+}
+
+function ufReset() { init(); log('reset — 8 singleton components'); }
+
+function log(msg, cls='') {
+  if(!msg) { document.getElementById('uf-log').innerHTML=''; return; }
+  const d=document.getElementById('uf-log');
+  const line=document.createElement('div');
+  line.className='log-line'+(cls?' '+cls:'');
+  line.textContent='› '+msg;
+  d.prepend(line);
+  while(d.children.length>4) d.removeChild(d.lastChild);
+}
+
+async function ufDemo() {
+  if(animating) return;
+  animating=true;
+  init();
+  const steps=[[0,1],[2,3],[4,5],[6,7],[0,2],[4,6],[0,4]];
+  for(const [a,b] of steps) {
+    await new Promise(r=>setTimeout(r,700));
+    selected=[a,b];
+    render();
+    await new Promise(r=>setTimeout(r,400));
+    const ra=find(a),rb=find(b);
+    if(ra!==rb) union(a,b);
+    log(`union(${a},${b}) → root ${find(a)}`, 'highlight');
+    selected=[];
+    render();
+  }
+  animating=false;
+}
+
+init();
+</script>

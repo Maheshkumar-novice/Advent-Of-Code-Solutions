@@ -1,0 +1,183 @@
+Understanding:
+
+162,817,812
+57,618,57
+906,360,560
+592,479,940
+352,342,300
+466,668,158
+542,29,236
+431,825,988
+739,650,466
+52,470,668
+216,146,977
+819,987,18
+117,168,530
+805,96,715
+346,949,466
+970,615,88
+941,993,340
+862,61,35
+984,92,344
+425,690,689
+
+WE have the 3D points of the junction boxes - where they are located.
+
+The ask is to find top 10 closest points? or we can find and list out the closest points by distance.
+
+So for each point pair we have to find out the distance between them and sort from low to high - then we have to build the circuit of points by grouping them.
+
+how we group them? when we check a pair of circuits - we can see any one of them is present in a circuit - if yes add both to that circuit else create a new circuit?
+
+162,817,812
+57,618,57
+906,360,560
+
+162,817,812 57,618,57  100
+162,817,812 906,360,560 200
+57,618,57 906,360,560 300
+
+they all form a single circuit.
+
+top 10 lowest distances - form circuits - count the circuits
+
+for each pair of junction box
+    find the distance and store
+
+sort by low distance to high distance
+
+go through top 10
+
+form circuits
+
+go through each junction box to find out single circuits - not belonging to any.
+
+this work? or we can just take the circuits as they will have more than 1. top 3 and multiply.
+
+we need a util to find out distance between 2 circuits.
+
+how we will create circuit pairs?
+just a nested loop excluding itself. or zip like thing.
+
+No something like below is fine.
+
+>>> for i in range(len(a)):
+...     for j in range(len(a)):
+...              if i != j and i < j: print(a[i], a[j])
+...
+1 2
+1 3
+2 3
+
+pass to our dist func and get the result.
+
+store in a list of tuple that we sort using the distance as key.
+
+>>> sorted(a, key=lambda e: e[2])
+[(1, 3, 2), (1, 2, 3)]
+
+top - 10
+
+then for each one
+
+circuits will be [{}, {}]
+
+if a pair any box in circuit add both in the set - else create new circuit and insert.
+
+let's see how it goes.
+
+dist func
+
+import math
+math.dist(a, b)
+
+love the visualization by claude. the svg.
+
+learned about this technique called isometric projection - fake 3d in 2d plane :)
+
+didn't work
+
+1 2
+3 4
+5 6
+3 6
+
+1 2 a circuit
+3 4 a circuit
+5 6 a circuit
+3 6 - where to put? merge 3 4 5 6
+what our logic does? 3 4 6
+1 2
+3 4 6
+5 6
+
+1 2
+3 4 5 6
+
+so read about union find algorithms
+
+so my understanding is that - when we have disjoint sets - we can use it to find the root for the same grouping and union to join the groups.
+
+there is path compression etc there but fine.
+
+now that I have the sorted distances.
+
+i can init boss dict with every point as their boss (tuple in this case).
+
+when we iterate through pairs - find boss of both boxes - if they are same then no need to do anything else - union them.
+
+for find - what to do?
+for union - what to do?
+
+given X for find - we need to find the boss recursively until the boss is same
+
+def find(X):
+ if boss_dict[X] == X:
+    return X
+
+return find(boss_dict[X])
+
+this will get us the boss
+
+{1: 1, 2: 1, 3: 2}
+
+for find(3) - boss_dict[3] is 2 - so find(2) - boss_dict[2] is 1 then find(1) - boss_dict[1] = 1 return 1
+
+find(3)
+-> 1
+ -> find(2)
+  -> 1
+   -> find(1)
+     -> 1
+
+what about union?
+
+def union(X, Y):
+ if find(X) != find(Y):
+  boss_dict[Y] = X
+
+so Y becomes reporter to X - Y reports to X and X is the boss of Y - 2 groups joined.
+
+once you updated the boss dict what will you do?
+
+solved!!!!
+
+time for part-2...
+
+awesome - i did with the brute force and it worked but there is a graph property we can use to solve faster.
+
+when we do union - one junction will be merged to a circuit that means when we reach the final connection we are done.
+
+this is amazing to learn.
+          1
+    2           3
+       4    5
+
+remaining boxes - 5
+connect 1-2 (1-2) 3 4 5 - r: 4
+c 2-3 (1-2-3) 4 5 - r: 3
+c 4-5 (1-2-3) (4-5) - r: 2
+c: 1-4 (1-2-3) (4-5) - r: 2
+c: 3-4 (1-2-3-4-5) - r: 1
+
+great.
