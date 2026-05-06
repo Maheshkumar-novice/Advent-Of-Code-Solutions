@@ -7,8 +7,8 @@ This repository contains my solutions for [Advent of Code](https://adventofcode.
 
 ## Overall Progress
 - Years Participated: 2025, 2024, 2023, 2022, 2021, 2019, 2015
-- Days Completed: 71/175 (40.6% of all possible days)
-- Total Stars: 142/350 (40.6% of all possible stars)
+- Days Completed: 73/175 (41.7% of all possible days)
+- Total Stars: 146/350 (41.7% of all possible stars)
 - Average Stars per Day: 2.0 (when attempted)
 
 
@@ -25,13 +25,14 @@ This repository contains my solutions for [Advent of Code](https://adventofcode.
 | Day  4 | ✅     | ✅     |
 | Day  5 | ✅     | ✅     |
 | Day  6 | ✅     | ✅     |
+| Day  7 | ✅     | ✅     |
+| Day  8 | ✅     | ✅     |
 
 ### Year 2025 Statistics
-- Progress: 6/25 days (24.0% of challenges attempted)
-- Stars Collected: 12/12 (100.0% of attempted challenges completed)
-- Part 1 Completion: 6/6 (100.0%)
-- Part 2 Completion: 6/6 (100.0%)
-- Remaining Challenges: 19 days
+- Progress: 8/25 days (32.0% of challenges attempted)
+- Stars Collected: 16/16 (100.0% of attempted challenges completed)
+- Part 1 Completion: 8/8 (100.0%)
+- Part 2 Completion: 8/8 (100.0%)
 
 
 ### 2024
