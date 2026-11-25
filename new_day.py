@@ -23,7 +23,7 @@ def get_aoc_cookie():
                 if cookie.name == "session":
                     print(f"Found cookie in {browser_name}")
                     return cookie.value
-        except:
+        except Exception:
             continue
 
     return None
@@ -56,15 +56,18 @@ def create_aoc_directory(day: int, year: int, session_cookie: str):
 
     # Create Python files with initial content
     template = """
-with open("sample.txt") as f:
+import sys
+
+# uv run part-1.py sample.txt  -> the example
+# uv run part-1.py             -> your input
+path = sys.argv[1] if len(sys.argv) > 1 else "input.txt"
+with open(path) as f:
     input_data = f.read()
-""".strip()
+""".lstrip()
 
-    with open(day_dir / "part-1.py", "w") as f:
-        f.write(template)
-
-    with open(day_dir / "part-2.py", "w") as f:
-        f.write(template)
+    for part in ("part-1", "part-2"):
+        with open(day_dir / f"{part}.py", "w") as f:
+            f.write(template.replace("part-1", part))
 
     # Download input file
     headers = {"Cookie": f"session={session_cookie}", "Connection": "close"}

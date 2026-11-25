@@ -111,7 +111,6 @@ class AoCStats:
         completed_part1 = sum(1 for day in all_days if day.has_part1)
         completed_part2 = sum(1 for day in all_days if day.has_part2)
         total_stars = completed_part1 + completed_part2
-        max_stars = total_days * 2
 
         years_completed = {day.year for day in all_days}
         years_list = sorted(years_completed, reverse=True)
@@ -127,14 +126,29 @@ class AoCStats:
 - Average Stars per Day: {(total_stars/total_days):.1f} (when attempted)"""
 
     def create_main_header(self) -> str:
-        """Create the main header section with badges"""
-        stars_repo_name = self.root_dir.resolve().name
+        """Create the main header section"""
         return """# 🎄 Advent of Code Solutions 🎄
 
 This repository contains my solutions for [Advent of Code](https://adventofcode.com/) challenges across multiple years.
 
+## How to run
+
+```sh
+uv sync                        # once on each machine
+uv run new_day.py 1 2026       # make 2026/Day-01 and download its input
+cd 2026/Day-01
+uv run part-1.py sample.txt    # the example
+uv run part-1.py               # your input
+cd ../..
+uv run run_solutions.py 2026   # the whole year, timed
+```
+
+Each day folder has `part-1.py`, `part-2.py`, `sample.txt` and `input.txt` (kept out of git), plus an optional `notes.txt` and an `extra/` folder for anything else. Days before 2026 always read `input.txt`.
+
+`new_day.py` reads your adventofcode.com session cookie from the browser, or from the `AOC_SESSION_COOKIE` environment variable.
+
 > [!TIP]
-> Each year's solutions are organized in their respective directories. Solutions are automatically tracked and this README is updated after each push."""
+> This README is updated automatically after each push."""
 
     def generate_readme(self) -> str:
         """Generate the complete README content"""
