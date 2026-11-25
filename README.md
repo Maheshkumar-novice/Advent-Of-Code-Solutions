@@ -10,8 +10,6 @@ uv run new_day.py 1 2026       # make 2026/Day-01 and download its input
 cd 2026/Day-01
 uv run part-1.py sample.txt    # the example
 uv run part-1.py               # your input
-cd ../..
-uv run run_solutions.py 2026   # the whole year, timed
 ```
 
 Each day folder has `part-1.py`, `part-2.py`, `sample.txt` and `input.txt` (kept out of git), plus an optional `notes.txt` and an `extra/` folder for anything else. Days before 2026 always read `input.txt`.
