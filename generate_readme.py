@@ -13,6 +13,15 @@ from rich.progress import track
 console = Console()
 
 
+# Advent of Code had 25 puzzles a year up to 2024, and 12 from 2025 on.
+LAST_25_DAY_YEAR = 2024
+
+
+def days_in_year(year: int) -> int:
+    """Return how many puzzles the given year has."""
+    return 25 if year <= LAST_25_DAY_YEAR else 12
+
+
 @dataclass
 class DayStatus:
     year: int
@@ -77,17 +86,17 @@ class AoCStats:
         max_stars = total_days * 2
 
         # Calculate percentage of year completed
-        days_in_year = 25  # Total days in AoC
-        completion_percentage = (total_days / days_in_year) * 100
+        year_total = days_in_year(year)
+        completion_percentage = (total_days / year_total) * 100
 
         stats = f"""### Year {year} Statistics
-- Progress: {total_days}/{days_in_year} days ({completion_percentage:.1f}% of challenges attempted)
+- Progress: {total_days}/{year_total} days ({completion_percentage:.1f}% of challenges attempted)
 - Stars Collected: {stars}/{max_stars} ({(stars/max_stars*100):.1f}% of attempted challenges completed)
 - Part 1 Completion: {completed_part1}/{total_days} ({completed_part1/total_days*100:.1f}%)
 - Part 2 Completion: {completed_part2}/{total_days} ({completed_part2/total_days*100:.1f}%)"""
 
         if year == self.current_year:
-            remaining_days = 25 - total_days
+            remaining_days = year_total - total_days
             if remaining_days > 0:
                 stats += f"\n- Remaining Challenges: {remaining_days} days"
 
@@ -108,7 +117,7 @@ class AoCStats:
         years_list = sorted(years_completed, reverse=True)
         years_str = ", ".join([str(y) for y in years_list])
 
-        total_possible_days = len(years_completed) * 25
+        total_possible_days = sum(days_in_year(year) for year in years_completed)
         total_possible_stars = total_possible_days * 2
 
         return f"""## Overall Progress
