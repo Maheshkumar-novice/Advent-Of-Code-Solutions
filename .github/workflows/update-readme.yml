@@ -20,16 +20,12 @@ jobs:
         with:
           fetch-depth: 0  # Fetch all history for better tracking
       
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      
-      - name: Install dependencies
-        run: pip install rich
+      # uv reads the Python version from .python-version and the packages from uv.lock
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10
 
       - name: Generate README
-        run: python3 generate_readme.py --root .
+        run: uv run --locked generate_readme.py --root .
       
       - name: Check for changes
         id: check_changes

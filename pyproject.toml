@@ -1,6 +1,26 @@
+[project]
+name = "advent-of-code-solutions"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "browser-cookie3",
+    "graphviz",
+    "networkx",
+    "numpy",
+    "requests",
+    "rich",
+]
+
+[dependency-groups]
+dev = ["ruff"]
+
+[tool.uv]
+# Just scripts, not a package to install (and setup.py here isn't a packaging script).
+package = false
+
 [tool.ruff]
+# The Python version comes from requires-python above.
 line-length = 200
-target-version = "py312"
 fix = true
 
 [tool.ruff.lint]

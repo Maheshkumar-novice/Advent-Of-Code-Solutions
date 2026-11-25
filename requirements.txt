@@ -1,7 +1,0 @@
-ruff
-graphviz
-networkx
-browser-cookie3
-requests
-rich
-numpy
