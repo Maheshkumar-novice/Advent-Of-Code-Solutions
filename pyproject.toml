@@ -15,13 +15,13 @@ dependencies = [
 dev = ["ruff"]
 
 [tool.uv]
-# Just scripts, not a package to install (and setup.py here isn't a packaging script).
+# Just scripts, not a package to install.
 package = false
 
 [tool.ruff]
 # The Python version comes from requires-python above.
+# `ruff check` only reports; add --fix when you want it to change files.
 line-length = 200
-fix = true
 
 [tool.ruff.lint]
 # Named on purpose, so a ruff update doesn't change them:

@@ -47,11 +47,11 @@ class AoCStats:
             console.print("Expected structure:")
             console.print("  root/")
             console.print("    ├── 2024/")
-            console.print("    │   ├── Day-1/")
-            console.print("    │   └── Day-2/")
+            console.print("    │   ├── Day-01/")
+            console.print("    │   └── Day-02/")
             console.print("    └── 2023/")
-            console.print("        ├── Day-1/")
-            console.print("        └── Day-2/")
+            console.print("        ├── Day-01/")
+            console.print("        └── Day-02/")
             return False
         return True
 
@@ -190,13 +190,13 @@ def main():
 Example directory structure:
   repository_root/
     ├── 2024/
-    │   ├── Day-1/
+    │   ├── Day-01/
     │   │   ├── part-1.py
     │   │   └── part-2.py
-    │   └── Day-2/
+    │   └── Day-02/
     ├── 2023/
-    │   ├── Day-1/
-    │   └── Day-2/
+    │   ├── Day-01/
+    │   └── Day-02/
     └── README.md
         """,
     )
